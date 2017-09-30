@@ -1,0 +1,103 @@
+.main-header
+	background-color: green
+	width: 100%
+	&__wrapper
+		display: flex
+		justify-content: space-between
+		align-items: center
+		min-height: 80px
+		position: relative
+		transition: .5s
+	&__logo
+		flex-basis: 20%
+		font-size: 2.2rem
+		color: $accent
+	&__navigation 
+		flex-basis: 70%
+		z-index: 3
+		ul
+			display: flex
+			justify-content: space-between
+			+sm-block
+				flex-direction: column
+				position: absolute
+				// clip-path: circle(0px at top right)
+				top: 0
+				width: 0px
+				overflow: hidden
+				transition: .5s
+				background-color: $accent
+				right: -15px
+			li
+				text-transform: uppercase
+				text-align: center
+				+sm-block
+					padding: 2rem 0
+					&:first-child
+						padding-top: 8rem 
+					&:last-child
+						padding-bottom: 5rem
+
+.header-stick
+	position: fixed
+	top: 0
+	z-index: 999
+	-webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.16)
+	-moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.16)
+	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.16)
+
+.main-header__navigation--open
+	// z-index: 3
+	width: 300px !important
+	// clip-path: circle(150% at top right) !important
+
+.header-active /* active link */
+	color: #fff
+
+.home
+	height: 2000px
+
+.responsive-menu
+	cursor: pointer
+	display: none
+	+sm-block
+		display: block
+	&__overlay
+		+overlay(#000, .9)
+		width: 0
+		top: 0
+		left: 0
+		height: 100vh
+		position: fixed
+		opacity: 0
+		z-index: 2
+		transition: .5s
+		// z-index: 2
+		&--active
+			opacity: 1
+			width: 100%
+	&__hamburger, &:before, &:after
+		content: ''
+		display: block
+		background: #EBEBD3
+		height: 3px
+		width: 1.75em
+		border-radius: 3px
+		transition: all ease-in-out 500ms
+		margin: 4px 0
+		position: relative
+		z-index: 999
+	&--open
+		.responsive-menu__hamburger
+			opacity: 0
+			margin: 0
+		&:after
+			transform: translateY(-5.5px) rotate(-45deg)
+			margin: 0
+		&:before
+			transform: rotate(45deg)
+			margin: 0
+
+
+
+

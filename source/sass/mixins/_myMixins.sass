@@ -1,0 +1,54 @@
+=overlay($color, $opacity)
+	&::before
+		content: ""
+		position: absolute
+		width: 100%
+		top: 0
+		left: 0
+		height: 100%
+		opacity: $opacity
+		background-color: $color
+
+=placeHolder($color)
+	*::-webkit-input-placeholder
+		color: $color
+		opacity: 1
+	*:-moz-placeholder
+		color: $color
+		opacity: 1
+	*::-moz-placeholder
+		color: $color
+		opacity: 1
+	*:-ms-input-placeholder
+		color: $color
+		opacity: 1
+
+=text($color: null, $fontSize: null) 
+	color: $color
+	font-size: $fontSize
+
+
+=grid()
+	display: -ms-grid
+	display: grid
+
+=grid-child ($col-start, $col-end, $row-start, $row-end)
+	-ms-grid-column: $col-start
+	-ms-grid-column-span: $col-end - $col-start
+	-ms-grid-row: $row-start
+	-ms-grid-row-span: $row-end - $row-start
+	grid-column: #{$col-start}/#{$col-end}
+	grid-row: #{$row-start}/#{$row-end}
+
+=grid-col($args)
+	-ms-grid-columns: #{$args}
+	grid-template-columns: #{$args}
+
+=grid-row($args)
+	-ms-grid-rows: #{$args}
+	grid-template-rows: #{$args}
+
+// color: #{$color}
+// font-size: #{$fontSize}
+// font-family: #{$fontFamily}
+

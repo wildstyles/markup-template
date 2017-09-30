@@ -1,0 +1,29 @@
+.button // button styles
+	display: inline-block
+	border: 2px $accent solid
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 17px 43px
+	font-size: 18px
+	font-family: $default-font
+	letter-spacing: 1px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	text-transform: uppercase
+	transition: background-color .3s ease, color .3s ease, border-color .3s ease
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: transparent
+		border-color: #FED136
+		color: #fff
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
